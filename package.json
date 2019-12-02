@@ -1,0 +1,19 @@
+{
+  "name": "tardis_client_sample_cocos",
+  "version": "1.0.0",
+  "description": "Hello world new project template.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sampleProto.js": "pbjs --force-message --no-verify --no-convert --no-delimited -t static-module -w default -r base -o assets/Protocols/sampleProto.js assets/Protocols/sample.proto",
+    "sampleProto.insert": "CodeInserter assets/Protocols/sampleProto.js",
+    "sampleProto.ts": "pbts --no-comments -o assets/Protocols/sampleProto.d.ts assets/Protocols/sampleProto.js",
+    "proto": "npm run sampleProto.js && npm run sampleProto.insert && npm run sampleProto.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "ngt_connector": "git+https://github.nhnent.com/tardis/client_connector_type_script.git#0.11.1_Release"
+  }
+}
