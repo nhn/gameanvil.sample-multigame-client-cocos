@@ -14,6 +14,13 @@
   "license": "ISC",
   "devDependencies": {},
   "dependencies": {
-    "ngt_connector": "git+https://github.nhnent.com/tardis/client_connector_type_script.git#0.11.1_Release"
+    "ngt_connector": "git+https://github.nhnent.com/tardis/client_connector_type_script.git#0.11.2"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.nhnent.com/tardis/sample_multigame_client_cocos.git"
   }
 }
