@@ -17,7 +17,7 @@
 				"HTML5"
 			],
 			"package_download_url": "https://download.cocos.com/CocosServices/plugins/service-analytics/1.2.3_2.1.1.zip",
-			"package_version_desc": "\n<strong>update：</strong> 2019/11/18\n<strong>update note：</strong></p>\n<ol>\n<li>Update Cocos Analytics SDK</li>\n<li>Modify the problem of integration of WeChat and Baidu mini game</li>\n<li>If you have any questions or needs, please contact our technical support email: <a href=\"mailto:support-cocos@cocos.com\">support-cocos@cocos.com</a></li>\n</ol>",
+			"package_version_desc": "<br />\n<strong>update：</strong> 2019/11/18<br />\n<strong>update note：</strong></p>\n<ol>\n<li>Update Cocos Analytics SDK</li>\n<li>Modify the problem of integration of WeChat and Baidu mini game</li>\n</ol>",
 			"service_component_name": "service-analytics",
 			"package_versions": [
 				"1.2.3_2.1.1",
