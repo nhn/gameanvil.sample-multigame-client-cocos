@@ -1,5 +1,12 @@
-import { sampleProto } from '../Protocols/sampleProto'
-import { Connector, ProtocolManager, Config } from 'ngt_connector'
+/*
+    IE등 구버전 브라우저에서 Connector를 사용하기 위해서는 
+    core-js, regenerator-runtime 등의 플러그인을 사용해야 한다.
+*/
+import 'core-js';
+import 'regenerator-runtime';
+
+import { sampleProto } from '../Protocols/sampleProto';
+import { Connector, ProtocolManager } from 'ngt_connector';
 
 /*
     Tardis Connector를 관리하기 위한 Manager 클래스.

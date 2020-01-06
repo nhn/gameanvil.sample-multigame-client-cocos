@@ -2,6 +2,7 @@
   "android-instant": {
     "REMOTE_SERVER_ROOT": "",
     "host": "",
+    "packageName": "org.cocos2d.helloworld",
     "pathPattern": "",
     "recordPath": "",
     "scheme": "https",
@@ -36,7 +37,7 @@
     "zip": false
   },
   "startScene": "fddc8365-24b9-437e-9234-bf2fc13895dc",
-  "title": "tardis_sample_client_cocos",
+  "title": "sample_multigame_client_cocos",
   "webOrientation": "auto",
   "wechatgame": {
     "REMOTE_SERVER_ROOT": "",
@@ -46,5 +47,15 @@
     "subContext": ""
   },
   "xxteaKey": "0d324a4c-1c46-49",
-  "zipCompressJs": true
+  "zipCompressJs": true,
+  "android": {
+    "packageName": "org.cocos2d.helloworld"
+  },
+  "ios": {
+    "packageName": "org.cocos2d.helloworld"
+  },
+  "mac": {
+    "packageName": "org.cocos2d.helloworld"
+  },
+  "win32": {}
 }
