@@ -15,7 +15,7 @@
   "devDependencies": {},
   "dependencies": {
     "core-js": "^3.6.1",
-    "ngt_connector": "git+https://github.nhnent.com/tardis/client_connector_type_script.git#0.12.0",
+    "ngt_connector": "git+https://github.nhnent.com/game-server-engine/client-connector-typescript.git#0.12.0",
     "regenerator-runtime": "^0.13.3"
   },
   "directories": {
