@@ -10,4 +10,4 @@ Node.js를 설치 후 terminal에서 npm i  명령을 실행해 필요한 플러
 
 
 바로 보기
-https://github.nhnent.com/pages/tardis/tardis_sample_client_cocos/web-mobile/
+https://github.nhnent.com/pages/game-server-engine/sample-multigame-client-cocos/web-mobile/
