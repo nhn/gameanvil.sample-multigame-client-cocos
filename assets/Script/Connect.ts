@@ -41,7 +41,7 @@ export default class Connect extends cc.Component {
 
     start() {
         let session = TardisManager.GetInstance().GetSessionAgent();
-        session.AddOnDisconnect((agent, message) => {
+        session.AddOnDisconnect((session, resultCode, reason, force, payload) => {
             this.labelConnect.node.color = cc.Color.RED;
             this.labelAuthenticate.node.color = cc.Color.RED;
 
