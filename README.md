@@ -1,4 +1,4 @@
-# tardis_sample_client
+# gameflex_sample_client
 
 
 이 샘플 프로젝트를 실행하기 위해서는 Node.js 가 필요합니다.

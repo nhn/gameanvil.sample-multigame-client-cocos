@@ -1,5 +1,5 @@
 {
-  "name": "tardis_client_sample_cocos",
+  "name": "gameflex_client_sample_cocos",
   "version": "1.0.0",
   "description": "Hello world new project template.",
   "main": "index.js",
@@ -15,7 +15,7 @@
   "devDependencies": {},
   "dependencies": {
     "core-js": "^3.6.1",
-    "ngt_connector": "git+https://github.nhnent.com/game-server-engine/client-connector-typescript.git#0.12.1",
+    "gameflex-connector": "git+https://github.nhnent.com/game-server-engine/client-connector-typescript.git#1.0.0-EA",
     "regenerator-runtime": "^0.13.3"
   },
   "directories": {
@@ -23,6 +23,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.nhnent.com/tardis/sample_multigame_client_cocos.git"
+    "url": "https://github.nhnent.com/game-server-engine/sample_multigame_client_cocos.git"
   }
 }

@@ -57,7 +57,7 @@
             }
 
             /**
-             * static className: string. NGT Client
+             * static className: string. Added by gameflex.
              * @member {string} className
              * @memberof sampleProto.RegisterNickNameReq
              * @static
@@ -65,7 +65,7 @@
             RegisterNickNameReq.className = "RegisterNickNameReq";
 
             /**
-             * static index: number. NGT Client
+             * static index: number. Added by gameflex.
              * @member {number} index
              * @memberof sampleProto.RegisterNickNameReq
              * @static
@@ -73,7 +73,7 @@
             RegisterNickNameReq.index = 0;
 
             /**
-             * IMessage property className: string. NGT Client
+             * IMessage property className: string. Added by gameflex.
              * @member {string} className
              * @memberof sampleProto.RegisterNickNameReq
              * @instance
@@ -81,7 +81,7 @@
             RegisterNickNameReq.prototype.className = "RegisterNickNameReq";
 
             /**
-             * IMessage property index: number. NGT Client
+             * IMessage property index: number. Added by gameflex.
              * @member {number} index
              * @memberof sampleProto.RegisterNickNameReq
              * @instance
@@ -183,7 +183,7 @@
             }
 
             /**
-             * static className: string. NGT Client
+             * static className: string. Added by gameflex.
              * @member {string} className
              * @memberof sampleProto.RegisterNickNameRes
              * @static
@@ -191,7 +191,7 @@
             RegisterNickNameRes.className = "RegisterNickNameRes";
 
             /**
-             * static index: number. NGT Client
+             * static index: number. Added by gameflex.
              * @member {number} index
              * @memberof sampleProto.RegisterNickNameRes
              * @static
@@ -199,7 +199,7 @@
             RegisterNickNameRes.index = 1;
 
             /**
-             * IMessage property className: string. NGT Client
+             * IMessage property className: string. Added by gameflex.
              * @member {string} className
              * @memberof sampleProto.RegisterNickNameRes
              * @instance
@@ -207,7 +207,7 @@
             RegisterNickNameRes.prototype.className = "RegisterNickNameRes";
 
             /**
-             * IMessage property index: number. NGT Client
+             * IMessage property index: number. Added by gameflex.
              * @member {number} index
              * @memberof sampleProto.RegisterNickNameRes
              * @instance
@@ -309,7 +309,7 @@
             }
 
             /**
-             * static className: string. NGT Client
+             * static className: string. Added by gameflex.
              * @member {string} className
              * @memberof sampleProto.ChatMessageToS
              * @static
@@ -317,7 +317,7 @@
             ChatMessageToS.className = "ChatMessageToS";
 
             /**
-             * static index: number. NGT Client
+             * static index: number. Added by gameflex.
              * @member {number} index
              * @memberof sampleProto.ChatMessageToS
              * @static
@@ -325,7 +325,7 @@
             ChatMessageToS.index = 2;
 
             /**
-             * IMessage property className: string. NGT Client
+             * IMessage property className: string. Added by gameflex.
              * @member {string} className
              * @memberof sampleProto.ChatMessageToS
              * @instance
@@ -333,7 +333,7 @@
             ChatMessageToS.prototype.className = "ChatMessageToS";
 
             /**
-             * IMessage property index: number. NGT Client
+             * IMessage property index: number. Added by gameflex.
              * @member {number} index
              * @memberof sampleProto.ChatMessageToS
              * @instance
@@ -435,7 +435,7 @@
             }
 
             /**
-             * static className: string. NGT Client
+             * static className: string. Added by gameflex.
              * @member {string} className
              * @memberof sampleProto.ChatMessageToC
              * @static
@@ -443,7 +443,7 @@
             ChatMessageToC.className = "ChatMessageToC";
 
             /**
-             * static index: number. NGT Client
+             * static index: number. Added by gameflex.
              * @member {number} index
              * @memberof sampleProto.ChatMessageToC
              * @static
@@ -451,7 +451,7 @@
             ChatMessageToC.index = 3;
 
             /**
-             * IMessage property className: string. NGT Client
+             * IMessage property className: string. Added by gameflex.
              * @member {string} className
              * @memberof sampleProto.ChatMessageToC
              * @instance
@@ -459,7 +459,7 @@
             ChatMessageToC.prototype.className = "ChatMessageToC";
 
             /**
-             * IMessage property index: number. NGT Client
+             * IMessage property index: number. Added by gameflex.
              * @member {number} index
              * @memberof sampleProto.ChatMessageToC
              * @instance
@@ -561,7 +561,7 @@
             }
 
             /**
-             * static className: string. NGT Client
+             * static className: string. Added by gameflex.
              * @member {string} className
              * @memberof sampleProto.GameMessageToS
              * @static
@@ -569,7 +569,7 @@
             GameMessageToS.className = "GameMessageToS";
 
             /**
-             * static index: number. NGT Client
+             * static index: number. Added by gameflex.
              * @member {number} index
              * @memberof sampleProto.GameMessageToS
              * @static
@@ -577,7 +577,7 @@
             GameMessageToS.index = 4;
 
             /**
-             * IMessage property className: string. NGT Client
+             * IMessage property className: string. Added by gameflex.
              * @member {string} className
              * @memberof sampleProto.GameMessageToS
              * @instance
@@ -585,7 +585,7 @@
             GameMessageToS.prototype.className = "GameMessageToS";
 
             /**
-             * IMessage property index: number. NGT Client
+             * IMessage property index: number. Added by gameflex.
              * @member {number} index
              * @memberof sampleProto.GameMessageToS
              * @instance
@@ -687,7 +687,7 @@
             }
 
             /**
-             * static className: string. NGT Client
+             * static className: string. Added by gameflex.
              * @member {string} className
              * @memberof sampleProto.GameMessageToC
              * @static
@@ -695,7 +695,7 @@
             GameMessageToC.className = "GameMessageToC";
 
             /**
-             * static index: number. NGT Client
+             * static index: number. Added by gameflex.
              * @member {number} index
              * @memberof sampleProto.GameMessageToC
              * @static
@@ -703,7 +703,7 @@
             GameMessageToC.index = 5;
 
             /**
-             * IMessage property className: string. NGT Client
+             * IMessage property className: string. Added by gameflex.
              * @member {string} className
              * @memberof sampleProto.GameMessageToC
              * @instance
@@ -711,7 +711,7 @@
             GameMessageToC.prototype.className = "GameMessageToC";
 
             /**
-             * IMessage property index: number. NGT Client
+             * IMessage property index: number. Added by gameflex.
              * @member {number} index
              * @memberof sampleProto.GameMessageToC
              * @instance
@@ -813,7 +813,7 @@
             }
 
             /**
-             * static className: string. NGT Client
+             * static className: string. Added by gameflex.
              * @member {string} className
              * @memberof sampleProto.SampleData
              * @static
@@ -821,7 +821,7 @@
             SampleData.className = "SampleData";
 
             /**
-             * static index: number. NGT Client
+             * static index: number. Added by gameflex.
              * @member {number} index
              * @memberof sampleProto.SampleData
              * @static
@@ -829,7 +829,7 @@
             SampleData.index = 6;
 
             /**
-             * IMessage property className: string. NGT Client
+             * IMessage property className: string. Added by gameflex.
              * @member {string} className
              * @memberof sampleProto.SampleData
              * @instance
@@ -837,7 +837,7 @@
             SampleData.prototype.className = "SampleData";
 
             /**
-             * IMessage property index: number. NGT Client
+             * IMessage property index: number. Added by gameflex.
              * @member {number} index
              * @memberof sampleProto.SampleData
              * @instance
@@ -939,7 +939,7 @@
             }
 
             /**
-             * static className: string. NGT Client
+             * static className: string. Added by gameflex.
              * @member {string} className
              * @memberof sampleProto.SampleReq
              * @static
@@ -947,7 +947,7 @@
             SampleReq.className = "SampleReq";
 
             /**
-             * static index: number. NGT Client
+             * static index: number. Added by gameflex.
              * @member {number} index
              * @memberof sampleProto.SampleReq
              * @static
@@ -955,7 +955,7 @@
             SampleReq.index = 7;
 
             /**
-             * IMessage property className: string. NGT Client
+             * IMessage property className: string. Added by gameflex.
              * @member {string} className
              * @memberof sampleProto.SampleReq
              * @instance
@@ -963,7 +963,7 @@
             SampleReq.prototype.className = "SampleReq";
 
             /**
-             * IMessage property index: number. NGT Client
+             * IMessage property index: number. Added by gameflex.
              * @member {number} index
              * @memberof sampleProto.SampleReq
              * @instance
@@ -1065,7 +1065,7 @@
             }
 
             /**
-             * static className: string. NGT Client
+             * static className: string. Added by gameflex.
              * @member {string} className
              * @memberof sampleProto.SampleRes
              * @static
@@ -1073,7 +1073,7 @@
             SampleRes.className = "SampleRes";
 
             /**
-             * static index: number. NGT Client
+             * static index: number. Added by gameflex.
              * @member {number} index
              * @memberof sampleProto.SampleRes
              * @static
@@ -1081,7 +1081,7 @@
             SampleRes.index = 8;
 
             /**
-             * IMessage property className: string. NGT Client
+             * IMessage property className: string. Added by gameflex.
              * @member {string} className
              * @memberof sampleProto.SampleRes
              * @instance
@@ -1089,7 +1089,7 @@
             SampleRes.prototype.className = "SampleRes";
 
             /**
-             * IMessage property index: number. NGT Client
+             * IMessage property index: number. Added by gameflex.
              * @member {number} index
              * @memberof sampleProto.SampleRes
              * @instance
@@ -1191,7 +1191,7 @@
             }
 
             /**
-             * static className: string. NGT Client
+             * static className: string. Added by gameflex.
              * @member {string} className
              * @memberof sampleProto.SampleToS
              * @static
@@ -1199,7 +1199,7 @@
             SampleToS.className = "SampleToS";
 
             /**
-             * static index: number. NGT Client
+             * static index: number. Added by gameflex.
              * @member {number} index
              * @memberof sampleProto.SampleToS
              * @static
@@ -1207,7 +1207,7 @@
             SampleToS.index = 9;
 
             /**
-             * IMessage property className: string. NGT Client
+             * IMessage property className: string. Added by gameflex.
              * @member {string} className
              * @memberof sampleProto.SampleToS
              * @instance
@@ -1215,7 +1215,7 @@
             SampleToS.prototype.className = "SampleToS";
 
             /**
-             * IMessage property index: number. NGT Client
+             * IMessage property index: number. Added by gameflex.
              * @member {number} index
              * @memberof sampleProto.SampleToS
              * @instance
@@ -1317,7 +1317,7 @@
             }
 
             /**
-             * static className: string. NGT Client
+             * static className: string. Added by gameflex.
              * @member {string} className
              * @memberof sampleProto.SampleToC
              * @static
@@ -1325,7 +1325,7 @@
             SampleToC.className = "SampleToC";
 
             /**
-             * static index: number. NGT Client
+             * static index: number. Added by gameflex.
              * @member {number} index
              * @memberof sampleProto.SampleToC
              * @static
@@ -1333,7 +1333,7 @@
             SampleToC.index = 10;
 
             /**
-             * IMessage property className: string. NGT Client
+             * IMessage property className: string. Added by gameflex.
              * @member {string} className
              * @memberof sampleProto.SampleToC
              * @instance
@@ -1341,7 +1341,7 @@
             SampleToC.prototype.className = "SampleToC";
 
             /**
-             * IMessage property index: number. NGT Client
+             * IMessage property index: number. Added by gameflex.
              * @member {number} index
              * @memberof sampleProto.SampleToC
              * @instance
@@ -1444,7 +1444,7 @@
             }
 
             /**
-             * static className: string. NGT Client
+             * static className: string. Added by gameflex.
              * @member {string} className
              * @memberof sampleProto.SampleToSpot
              * @static
@@ -1452,7 +1452,7 @@
             SampleToSpot.className = "SampleToSpot";
 
             /**
-             * static index: number. NGT Client
+             * static index: number. Added by gameflex.
              * @member {number} index
              * @memberof sampleProto.SampleToSpot
              * @static
@@ -1460,7 +1460,7 @@
             SampleToSpot.index = 11;
 
             /**
-             * IMessage property className: string. NGT Client
+             * IMessage property className: string. Added by gameflex.
              * @member {string} className
              * @memberof sampleProto.SampleToSpot
              * @instance
@@ -1468,7 +1468,7 @@
             SampleToSpot.prototype.className = "SampleToSpot";
 
             /**
-             * IMessage property index: number. NGT Client
+             * IMessage property index: number. Added by gameflex.
              * @member {number} index
              * @memberof sampleProto.SampleToSpot
              * @instance
@@ -1583,7 +1583,7 @@
             }
 
             /**
-             * static className: string. NGT Client
+             * static className: string. Added by gameflex.
              * @member {string} className
              * @memberof sampleProto.ResetSpot
              * @static
@@ -1591,7 +1591,7 @@
             ResetSpot.className = "ResetSpot";
 
             /**
-             * static index: number. NGT Client
+             * static index: number. Added by gameflex.
              * @member {number} index
              * @memberof sampleProto.ResetSpot
              * @static
@@ -1599,7 +1599,7 @@
             ResetSpot.index = 12;
 
             /**
-             * IMessage property className: string. NGT Client
+             * IMessage property className: string. Added by gameflex.
              * @member {string} className
              * @memberof sampleProto.ResetSpot
              * @instance
@@ -1607,7 +1607,7 @@
             ResetSpot.prototype.className = "ResetSpot";
 
             /**
-             * IMessage property index: number. NGT Client
+             * IMessage property index: number. Added by gameflex.
              * @member {number} index
              * @memberof sampleProto.ResetSpot
              * @instance
@@ -1710,7 +1710,7 @@
             }
 
             /**
-             * static className: string. NGT Client
+             * static className: string. Added by gameflex.
              * @member {string} className
              * @memberof sampleProto.SetTimer
              * @static
@@ -1718,7 +1718,7 @@
             SetTimer.className = "SetTimer";
 
             /**
-             * static index: number. NGT Client
+             * static index: number. Added by gameflex.
              * @member {number} index
              * @memberof sampleProto.SetTimer
              * @static
@@ -1726,7 +1726,7 @@
             SetTimer.index = 13;
 
             /**
-             * IMessage property className: string. NGT Client
+             * IMessage property className: string. Added by gameflex.
              * @member {string} className
              * @memberof sampleProto.SetTimer
              * @instance
@@ -1734,7 +1734,7 @@
             SetTimer.prototype.className = "SetTimer";
 
             /**
-             * IMessage property index: number. NGT Client
+             * IMessage property index: number. Added by gameflex.
              * @member {number} index
              * @memberof sampleProto.SetTimer
              * @instance
@@ -1848,7 +1848,7 @@
             }
 
             /**
-             * static className: string. NGT Client
+             * static className: string. Added by gameflex.
              * @member {string} className
              * @memberof sampleProto.RemoveTimer
              * @static
@@ -1856,7 +1856,7 @@
             RemoveTimer.className = "RemoveTimer";
 
             /**
-             * static index: number. NGT Client
+             * static index: number. Added by gameflex.
              * @member {number} index
              * @memberof sampleProto.RemoveTimer
              * @static
@@ -1864,7 +1864,7 @@
             RemoveTimer.index = 14;
 
             /**
-             * IMessage property className: string. NGT Client
+             * IMessage property className: string. Added by gameflex.
              * @member {string} className
              * @memberof sampleProto.RemoveTimer
              * @instance
@@ -1872,7 +1872,7 @@
             RemoveTimer.prototype.className = "RemoveTimer";
 
             /**
-             * IMessage property index: number. NGT Client
+             * IMessage property index: number. Added by gameflex.
              * @member {number} index
              * @memberof sampleProto.RemoveTimer
              * @instance
@@ -1961,7 +1961,7 @@
             }
 
             /**
-             * static className: string. NGT Client
+             * static className: string. Added by gameflex.
              * @member {string} className
              * @memberof sampleProto.UserInfo
              * @static
@@ -1969,7 +1969,7 @@
             UserInfo.className = "UserInfo";
 
             /**
-             * static index: number. NGT Client
+             * static index: number. Added by gameflex.
              * @member {number} index
              * @memberof sampleProto.UserInfo
              * @static
@@ -1977,7 +1977,7 @@
             UserInfo.index = 15;
 
             /**
-             * IMessage property className: string. NGT Client
+             * IMessage property className: string. Added by gameflex.
              * @member {string} className
              * @memberof sampleProto.UserInfo
              * @instance
@@ -1985,7 +1985,7 @@
             UserInfo.prototype.className = "UserInfo";
 
             /**
-             * IMessage property index: number. NGT Client
+             * IMessage property index: number. Added by gameflex.
              * @member {number} index
              * @memberof sampleProto.UserInfo
              * @instance

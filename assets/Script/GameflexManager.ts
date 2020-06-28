@@ -6,14 +6,14 @@ import 'core-js';
 import 'regenerator-runtime';
 
 import { sampleProto } from '../Protocols/sampleProto';
-import { Connector, ProtocolManager } from 'ngt_connector';
+import { Connector, ProtocolManager } from 'gameflex-connector';
 
 /*
     Tardis Connector를 관리하기 위한 Manager 클래스.
     
 */
-export default class TardisManager {
-    private static manager: TardisManager;
+export default class GameflexManager {
+    private static manager: GameflexManager;
     private connector: Connector;
     private constructor() {
         // 사용할 프로토콜을 등록. 
@@ -30,31 +30,31 @@ export default class TardisManager {
 
     static GetInstance() {
         if (this.manager == null) {
-            this.manager = new TardisManager();
+            this.manager = new GameflexManager();
         }
         return this.manager;
     }
 
-    // SessionAgent, UserAgent를 이용할 때 모든 결과는 callback을 통해 알 수 있습니다.
-    // ISessionListener, IUserListener를 구현해 모든 콜백을 전달 받을 객체를 만들고, 
-    // SessionAgent.AddListener(), UserAgent.AddListener()를 이용하여 등록할 수 있습니다.
+    // ConnectionAgent, UserAgent를 이용할 때 모든 결과는 callback을 통해 알 수 있습니다.
+    // IConnectionListener, IUserListener를 구현해 모든 콜백을 전달 받을 객체를 만들고, 
+    // ConnectionAgent.AddListener(), UserAgent.AddListener()를 이용하여 등록할 수 있습니다.
     // 또는 각 API에 직접 callback을 전달할 수도 있습니다. 
     // 경우에 따라 두가지 방식을 병행해서 사용할 수도 있으며 
     // 컨텐츠 구현에따라 편한 방식을 사용하면 됩니다. 
-    GetSessionAgent() {
-        // SessionAgent는 Connector 생성시 자동 생성됩니다.
-        // GetSessionAgent()를 이용해 생성된 SessionAgent를 가져와 사용할 수 있습니다.
-        return this.connector.GetSessionAgent();
+    GetConnectionAgent() {
+        // ConnectionAgent는 Connector 생성시 자동 생성됩니다.
+        // GetConnectionAgent()를 이용해 생성된 ConnectionAgent를 가져와 사용할 수 있습니다.
+        return this.connector.GetConnectionAgent();
     }
 
     GetUserAgent(serviceName: string) {
-        // GetUserAgent()를 이용해 생성된 SessionAgent를 가져와 사용할 수 있습니다.
+        // GetUserAgent()를 이용해 생성된 ConnectionAgent를 가져와 사용할 수 있습니다.
         // GetUserAgent(serviceName: string, subId: string): UserAgent;
         //  serviceName : 서버에 등록한 serviceName.
         //  subId : UserAgent를 만들때 사용한 subId.
-        // UserAgent는 SessionAgent와 달리 자동 생성되지 않습니다. 
+        // UserAgent는 ConnectionAgent와 달리 자동 생성되지 않습니다. 
         // 생성된 UserAgent가 없을 경우 null을 리턴합니다.
-        return this.connector.GetUserAgent(serviceName, "");
+        return this.connector.GetUserAgent(serviceName, 1);
     }
 
     CreateUserAgent(serviceName: string) {
@@ -62,8 +62,8 @@ export default class TardisManager {
         // CreateUserAgent(serviceName: string, subId: string): UserAgent;
         //  serviceName : 서버에 등록한 serviceName.
         //  subId : 사용할 subId. 같은 service를 사용할 UserAgent를 여러개 만들 경우 사용합니다.
-        // UserAgent는 SessionAgent와 달리 자동 생성되지 않습니다. 
+        // UserAgent는 ConnectionAgent와 달리 자동 생성되지 않습니다. 
         // 생성된 UserAgent가 없을 경우 null을 리턴합니다.
-        return this.connector.CreateUserAgent(serviceName, "");
+        return this.connector.CreateUserAgent(serviceName, 1);
     }
 }
