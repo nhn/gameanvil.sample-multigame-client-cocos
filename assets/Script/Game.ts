@@ -1,6 +1,6 @@
 import { sampleProto } from '../Protocols/sampleProto'
-import TardisManager from "./TardisManager";
-import { Packet, ResultCodeNamedRoom, ResultCodeMatchRoom, ResultCodeMatchUserStart, ResultCodeMatchPartyStart, IUserListener, ResultCodeMatchPartyCancel, ResultCodeMatchUserDone, ResultCodeMatchUserCancel, ResultCodeLogin, ResultCodeLogout, ResultCodeLeaveRoom } from "ngt_connector";
+import GameflexManager from "./GameflexManager";
+import { Packet, ResultCodeNamedRoom, ResultCodeMatchRoom, ResultCodeMatchUserStart, ResultCodeMatchPartyStart, IUserListener, ResultCodeMatchPartyCancel, ResultCodeMatchUserDone, ResultCodeMatchUserCancel, ResultCodeLogin, ResultCodeLogout, ResultCodeLeaveRoom } from "gameflex-connector";
 
 
 // Learn TypeScript:
@@ -35,9 +35,9 @@ export default class Game extends cc.Component implements IUserListener {
         // AddCallback을 이용해 사용자 정의 프로토콜을 처리할 콜백을 등록하며
         // 중복 등록되지 않도록 UserAgent가 생성될 때 등록합니다. 
         // 중복 등록할 경우 등록된 횟수만큼 호출됩니다.
-        let user = TardisManager.GetInstance().GetUserAgent(this.ServiceName);
+        let user = GameflexManager.GetInstance().GetUserAgent(this.ServiceName);
         if (user == null) {
-            user = TardisManager.GetInstance().CreateUserAgent(this.ServiceName);
+            user = GameflexManager.GetInstance().CreateUserAgent(this.ServiceName);
 
             // 사용자 정의 프로토콜을 처리할 콜백 등록
             // AddCallback<T extends IMessage>(message: new () => T, callback: (agent: UserAgent, msg: T) => void): void;
@@ -72,7 +72,7 @@ export default class Game extends cc.Component implements IUserListener {
     editBoxChannel: cc.EditBox = null;
     public onClickLogin() {
         console.log("Login - clicked");
-        let user = TardisManager.GetInstance().GetUserAgent(this.ServiceName);
+        let user = GameflexManager.GetInstance().GetUserAgent(this.ServiceName);
         // Service에 로그인합니다.
         // Login(userType: string, payload?: Payload, channelId?: string, callback?: (agent: UserAgent, resultCode: ResultCodeLogin, loginInfo: LoginInfo) => void): void;
         //   userType : 서버에 등록된 UserType. 
@@ -91,7 +91,7 @@ export default class Game extends cc.Component implements IUserListener {
 
     public onClickLogout() {
         console.log("Logout - clicked");
-        let user = TardisManager.GetInstance().GetUserAgent(this.ServiceName);
+        let user = GameflexManager.GetInstance().GetUserAgent(this.ServiceName);
         // 서비스에서 로그아웃 합니다. 
         //   callback : 결과를 전달 받을 콜백.(선택 사항)
         //     agent : Logout 호출한 UserAgent 객체.
@@ -109,7 +109,7 @@ export default class Game extends cc.Component implements IUserListener {
     labelMatchRoom: cc.Label = null;
     public onClickMatchRoom() {
         console.log("MatchRoom - clicked");
-        let user = TardisManager.GetInstance().GetUserAgent(this.ServiceName);
+        let user = GameflexManager.GetInstance().GetUserAgent(this.ServiceName);
         // Room 매칭
         // 서버에서 구현한 조건에 맞는 Room으로 매칭시킨다.
         // MatchRoom(isCreateRoomIfNotJoinRoom: boolean, isMoveRoomIfJoinedRoom: boolean, roomType: string, payload?: Payload, leaveRoomPayload?: Payload, callback?: (agent: UserAgent, resultCode: ResultCodeMatchRoom, roomId: string, payload: Payload) => void): void;
@@ -122,9 +122,11 @@ export default class Game extends cc.Component implements IUserListener {
         //     agent : MatchRoom 호출한 UserAgent 객체.
         //     resultCode : MatchRoom 결과
         //     roomId: 매칭된 room의 id 
+        //     roomName : 매칭된 room의 이름.
+        //     created : 매칭된 room을 생성했는지 여부.(방장 여부)
         //     payload: 서버 컨텐츠에서 보내주는 추가 데이터.
-        user.MatchRoom(true, true, this.RoomType_MatchRoom, null, null, (agent, resultCode, roomId, payload) => {
-            console.log("MatchRoom : " + ResultCodeMatchRoom[resultCode] + (roomId != null && roomId.length > 0 ? " roomId : " + roomId : ""));
+        user.MatchRoom(true, true, this.RoomType_MatchRoom, null, null, (agent, resultCode, roomId, roomName, created, payload) => {
+            console.log("MatchRoom : " + ResultCodeMatchRoom[resultCode] + " roomId : " + roomId + ", roomName : " + roomName + ", created : " + created);
             switch (resultCode) {
                 case ResultCodeMatchRoom.MATCH_ROOM_SUCCESS:
                 case ResultCodeMatchRoom.MATCH_ROOM_FAIL_ALREADY_JOINED_ROOM:
@@ -143,7 +145,7 @@ export default class Game extends cc.Component implements IUserListener {
     labelMatchUser: cc.Label = null;
     public onClickMatchUser() {
         console.log("MatchUser - clicked");
-        let user = TardisManager.GetInstance().GetUserAgent(this.ServiceName);
+        let user = GameflexManager.GetInstance().GetUserAgent(this.ServiceName);
 
         // User 매칭 시작
         // 서버에서 구현한 조건에 맞는 User끼리 매칭시킨다.
@@ -163,7 +165,7 @@ export default class Game extends cc.Component implements IUserListener {
 
     public onClickMatchUserCancel() {
         console.log("MatchUserCancel - clicked");
-        let user = TardisManager.GetInstance().GetUserAgent(this.ServiceName);
+        let user = GameflexManager.GetInstance().GetUserAgent(this.ServiceName);
         // User 매칭 취소
         // User 매칭을 취소한다.
         // MatchUserCancel(roomType: string, callback?: (agent: UserAgent, resultCode: ResultCodeMatchUserCancel) => void): void;
@@ -184,7 +186,7 @@ export default class Game extends cc.Component implements IUserListener {
     editBoxRoomName: cc.EditBox = null;
     public onClickNamedRoom() {
         console.log("PartyRoom - clicked");
-        let user = TardisManager.GetInstance().GetUserAgent(this.ServiceName);
+        let user = GameflexManager.GetInstance().GetUserAgent(this.ServiceName);
         // Party 매치를 위한 이름 있는 Room 생성 요청.
         // party를 구성할 user들을 같은 Room 에 모으고, Room에 모인 유저들을 한 party로 구성해서 매칭을 한다. 
         // NamedRoom의 isParty를 true로 설정하고, 같은 roomName을 사용한다.
@@ -196,17 +198,19 @@ export default class Game extends cc.Component implements IUserListener {
         //   callback : 결과를 전달 받을 콜백.(선택 사항)
         //     agent : LeaveRoom 호출한 UserAgent 객체.
         //     resultCode : LeaveRoom 결과.
-        //     roomName : 생성된 room 이름.
+        //     roomId : 입장한 room의 Id.
+        //     roomName : 입장한 room의 이름.
+        //     created : 입장한 room을 생성했는지 여부.(방장 여부)
         //     payload : 서버 컨텐츠에서 보내주는 추가 데이터.
-        user.NamedRoom(this.editBoxRoomName.string, this.RoomType_Party, true, null, (agent, resultCode, roomName, payload) => {
+        user.NamedRoom(this.editBoxRoomName.string, this.RoomType_Party, true, null, (agent, resultCode, roomId, roomName, created, payload) => {
             this.labelPartyRoom.node.color = (resultCode == ResultCodeNamedRoom.NAMED_ROOM_SUCCESS || resultCode == ResultCodeNamedRoom.NAMED_ROOM_FAIL_ALREADY_JOINED_ROOM) ? cc.Color.GREEN : cc.Color.RED;
-            console.log("PartyRoom : " + ResultCodeNamedRoom[resultCode] + (roomName != null && roomName.length > 0 ? " roomName : " + roomName : ""));
+            console.log("PartyRoom : " + ResultCodeNamedRoom[resultCode]  + " roomId : " + roomId + ", roomName : " + roomName + ", created : " + created);
         });
     }
 
     public onClickLeaveRoom() {
         console.log("LeaveRoom - clicked");
-        let user = TardisManager.GetInstance().GetUserAgent(this.ServiceName);
+        let user = GameflexManager.GetInstance().GetUserAgent(this.ServiceName);
         // Room 나가기
         // LeaveRoom(payload?: Payload, callback?: (agent: UserAgent, resultCode: ResultCodeLeaveRoom, roomId: string, payload: Payload) => void): void;
         //   payload : 추가적으로 필요한 데이터가 있을 경우 사용.(선택 사항)
@@ -233,7 +237,7 @@ export default class Game extends cc.Component implements IUserListener {
     labelMatchParty: cc.Label = null;
     public onClickMatchParty() {
         console.log("MatchParty - clicked");
-        let user = TardisManager.GetInstance().GetUserAgent(this.ServiceName);
+        let user = GameflexManager.GetInstance().GetUserAgent(this.ServiceName);
         // Party 매칭 시작
         // 서버에서 구현한 조건에 맞는 Party나 User를 매칭시킨다.
         // MatchPartyStart(roomType: string, payload?: Payload, callback?: (agent: UserAgent, resultCode: ResultCodeMatchPartyStart, payload: Payload) => void): void;
@@ -252,7 +256,7 @@ export default class Game extends cc.Component implements IUserListener {
 
     public onClickMatchPartyCancel() {
         console.log("MatchPartyCancel - clicked");
-        let user = TardisManager.GetInstance().GetUserAgent(this.ServiceName);
+        let user = GameflexManager.GetInstance().GetUserAgent(this.ServiceName);
         // Party 매칭 취소
         // Party 매칭을 취소한다.
         // MatchPartyCancel(roomType: string, callback?: (agent: UserAgent, resultCode: ResultCodeMatchPartyCancel) => void): void;
@@ -277,7 +281,7 @@ export default class Game extends cc.Component implements IUserListener {
         console.log("OnMatchPartyStart : " + ResultCodeMatchPartyStart[resultCode]);
     }
 
-    OnMatchPartyCancel(agent, resultCode, payload) {
+    OnMatchPartyCancel(agent, resultCode) {
         // Party 매칭이 취소되었을 때 전달 받을 콜백
         // Party 매칭을 취소한다.
         // MatchPartyCancel(roomType: string, callback?: (agent: UserAgent, resultCode: ResultCodeMatchPartyCancel) => void): void;
@@ -297,7 +301,7 @@ export default class Game extends cc.Component implements IUserListener {
         //   created : Room을 생성했는지 여부.
         //   roomId : 생성된 room 의 id.
         //   payload : 서버 컨텐츠에서 보내주는 추가 데이터.
-        console.log("MatchUserDone : " + ResultCodeMatchUserDone[resultCode] + (roomId != null && roomId.length > 0 ? " roomId : " + roomId : ""));
+        console.log("MatchUserDone : " + ResultCodeMatchUserDone[resultCode] +  " roomId : " + roomId + ", created : " + created);
         if (resultCode == ResultCodeMatchUserDone.MATCH_USER_DONE_SUCCESS) {
             if (this.labelMatchUser.node.color.toRGBValue() == cc.Color.YELLOW.toRGBValue())
                 this.labelMatchUser.node.color = cc.Color.GREEN;
@@ -330,7 +334,7 @@ export default class Game extends cc.Component implements IUserListener {
 
     public onClickChat() {
         console.log("Chat - clicked");
-        let user = TardisManager.GetInstance().GetUserAgent(this.ServiceName);
+        let user = GameflexManager.GetInstance().GetUserAgent(this.ServiceName);
         let msg = sampleProto.GameMessageToS.create({ message: this.editBoxMessage.string });
         let packet = Packet.CreateFromPbMsg(msg);
 
