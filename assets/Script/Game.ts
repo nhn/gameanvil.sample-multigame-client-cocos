@@ -1,6 +1,6 @@
 import { sampleProto } from '../Protocols/sampleProto'
-import GameflexManager from "./GameflexManager";
-import { Packet, ResultCodeNamedRoom, ResultCodeMatchRoom, ResultCodeMatchUserStart, ResultCodeMatchPartyStart, IUserListener, ResultCodeMatchPartyCancel, ResultCodeMatchUserDone, ResultCodeMatchUserCancel, ResultCodeLogin, ResultCodeLogout, ResultCodeLeaveRoom } from "gameflex-connector";
+import GameAnvilManager from "./GameAnvilManager";
+import { Packet, ResultCodeNamedRoom, ResultCodeMatchRoom, ResultCodeMatchUserStart, ResultCodeMatchPartyStart, IUserListener, ResultCodeMatchPartyCancel, ResultCodeMatchUserDone, ResultCodeMatchUserCancel, ResultCodeLogin, ResultCodeLogout, ResultCodeLeaveRoom } from "gameanvil-connector";
 
 
 // Learn TypeScript:
@@ -35,9 +35,9 @@ export default class Game extends cc.Component implements IUserListener {
         // AddCallback을 이용해 사용자 정의 프로토콜을 처리할 콜백을 등록하며
         // 중복 등록되지 않도록 UserAgent가 생성될 때 등록합니다. 
         // 중복 등록할 경우 등록된 횟수만큼 호출됩니다.
-        let user = GameflexManager.GetInstance().GetUserAgent(this.ServiceName);
+        let user = GameAnvilManager.GetInstance().GetUserAgent(this.ServiceName);
         if (user == null) {
-            user = GameflexManager.GetInstance().CreateUserAgent(this.ServiceName);
+            user = GameAnvilManager.GetInstance().CreateUserAgent(this.ServiceName);
 
             // 사용자 정의 프로토콜을 처리할 콜백 등록
             // AddCallback<T extends IMessage>(message: new () => T, callback: (agent: UserAgent, msg: T) => void): void;
@@ -72,7 +72,7 @@ export default class Game extends cc.Component implements IUserListener {
     editBoxChannel: cc.EditBox = null;
     public onClickLogin() {
         console.log("Login - clicked");
-        let user = GameflexManager.GetInstance().GetUserAgent(this.ServiceName);
+        let user = GameAnvilManager.GetInstance().GetUserAgent(this.ServiceName);
         // Service에 로그인합니다.
         // Login(userType: string, payload?: Payload, channelId?: string, callback?: (agent: UserAgent, resultCode: ResultCodeLogin, loginInfo: LoginInfo) => void): void;
         //   userType : 서버에 등록된 UserType. 
@@ -91,7 +91,7 @@ export default class Game extends cc.Component implements IUserListener {
 
     public onClickLogout() {
         console.log("Logout - clicked");
-        let user = GameflexManager.GetInstance().GetUserAgent(this.ServiceName);
+        let user = GameAnvilManager.GetInstance().GetUserAgent(this.ServiceName);
         // 서비스에서 로그아웃 합니다. 
         //   callback : 결과를 전달 받을 콜백.(선택 사항)
         //     agent : Logout 호출한 UserAgent 객체.
@@ -109,7 +109,7 @@ export default class Game extends cc.Component implements IUserListener {
     labelMatchRoom: cc.Label = null;
     public onClickMatchRoom() {
         console.log("MatchRoom - clicked");
-        let user = GameflexManager.GetInstance().GetUserAgent(this.ServiceName);
+        let user = GameAnvilManager.GetInstance().GetUserAgent(this.ServiceName);
         // Room 매칭
         // 서버에서 구현한 조건에 맞는 Room으로 매칭시킨다.
         // MatchRoom(isCreateRoomIfNotJoinRoom: boolean, isMoveRoomIfJoinedRoom: boolean, roomType: string, payload?: Payload, leaveRoomPayload?: Payload, callback?: (agent: UserAgent, resultCode: ResultCodeMatchRoom, roomId: string, payload: Payload) => void): void;
@@ -145,7 +145,7 @@ export default class Game extends cc.Component implements IUserListener {
     labelMatchUser: cc.Label = null;
     public onClickMatchUser() {
         console.log("MatchUser - clicked");
-        let user = GameflexManager.GetInstance().GetUserAgent(this.ServiceName);
+        let user = GameAnvilManager.GetInstance().GetUserAgent(this.ServiceName);
 
         // User 매칭 시작
         // 서버에서 구현한 조건에 맞는 User끼리 매칭시킨다.
@@ -165,7 +165,7 @@ export default class Game extends cc.Component implements IUserListener {
 
     public onClickMatchUserCancel() {
         console.log("MatchUserCancel - clicked");
-        let user = GameflexManager.GetInstance().GetUserAgent(this.ServiceName);
+        let user = GameAnvilManager.GetInstance().GetUserAgent(this.ServiceName);
         // User 매칭 취소
         // User 매칭을 취소한다.
         // MatchUserCancel(roomType: string, callback?: (agent: UserAgent, resultCode: ResultCodeMatchUserCancel) => void): void;
@@ -186,7 +186,7 @@ export default class Game extends cc.Component implements IUserListener {
     editBoxRoomName: cc.EditBox = null;
     public onClickNamedRoom() {
         console.log("PartyRoom - clicked");
-        let user = GameflexManager.GetInstance().GetUserAgent(this.ServiceName);
+        let user = GameAnvilManager.GetInstance().GetUserAgent(this.ServiceName);
         // Party 매치를 위한 이름 있는 Room 생성 요청.
         // party를 구성할 user들을 같은 Room 에 모으고, Room에 모인 유저들을 한 party로 구성해서 매칭을 한다. 
         // NamedRoom의 isParty를 true로 설정하고, 같은 roomName을 사용한다.
@@ -210,7 +210,7 @@ export default class Game extends cc.Component implements IUserListener {
 
     public onClickLeaveRoom() {
         console.log("LeaveRoom - clicked");
-        let user = GameflexManager.GetInstance().GetUserAgent(this.ServiceName);
+        let user = GameAnvilManager.GetInstance().GetUserAgent(this.ServiceName);
         // Room 나가기
         // LeaveRoom(payload?: Payload, callback?: (agent: UserAgent, resultCode: ResultCodeLeaveRoom, roomId: string, payload: Payload) => void): void;
         //   payload : 추가적으로 필요한 데이터가 있을 경우 사용.(선택 사항)
@@ -237,7 +237,7 @@ export default class Game extends cc.Component implements IUserListener {
     labelMatchParty: cc.Label = null;
     public onClickMatchParty() {
         console.log("MatchParty - clicked");
-        let user = GameflexManager.GetInstance().GetUserAgent(this.ServiceName);
+        let user = GameAnvilManager.GetInstance().GetUserAgent(this.ServiceName);
         // Party 매칭 시작
         // 서버에서 구현한 조건에 맞는 Party나 User를 매칭시킨다.
         // MatchPartyStart(roomType: string, payload?: Payload, callback?: (agent: UserAgent, resultCode: ResultCodeMatchPartyStart, payload: Payload) => void): void;
@@ -256,7 +256,7 @@ export default class Game extends cc.Component implements IUserListener {
 
     public onClickMatchPartyCancel() {
         console.log("MatchPartyCancel - clicked");
-        let user = GameflexManager.GetInstance().GetUserAgent(this.ServiceName);
+        let user = GameAnvilManager.GetInstance().GetUserAgent(this.ServiceName);
         // Party 매칭 취소
         // Party 매칭을 취소한다.
         // MatchPartyCancel(roomType: string, callback?: (agent: UserAgent, resultCode: ResultCodeMatchPartyCancel) => void): void;
@@ -334,7 +334,7 @@ export default class Game extends cc.Component implements IUserListener {
 
     public onClickChat() {
         console.log("Chat - clicked");
-        let user = GameflexManager.GetInstance().GetUserAgent(this.ServiceName);
+        let user = GameAnvilManager.GetInstance().GetUserAgent(this.ServiceName);
         let msg = sampleProto.GameMessageToS.create({ message: this.editBoxMessage.string });
         let packet = Packet.CreateFromPbMsg(msg);
 

@@ -6,14 +6,14 @@ import 'core-js';
 import 'regenerator-runtime';
 
 import { sampleProto } from '../Protocols/sampleProto';
-import { Connector, ProtocolManager } from 'gameflex-connector';
+import { Connector, ProtocolManager } from 'gameanvil-connector';
 
 /*
-    Tardis Connector를 관리하기 위한 Manager 클래스.
+    GameAnvil Connector를 관리하기 위한 Manager 클래스.
     
 */
-export default class GameflexManager {
-    private static manager: GameflexManager;
+export default class GameAnvilManager {
+    private static manager: GameAnvilManager;
     private connector: Connector;
     private constructor() {
         // 사용할 프로토콜을 등록. 
@@ -30,7 +30,7 @@ export default class GameflexManager {
 
     static GetInstance() {
         if (this.manager == null) {
-            this.manager = new GameflexManager();
+            this.manager = new GameAnvilManager();
         }
         return this.manager;
     }

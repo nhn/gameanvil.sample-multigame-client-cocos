@@ -1,5 +1,5 @@
-import GameflexManager from "./GameflexManager";
-import { ResultCodeConnect, ResultCodeAuth, LoginedUserInfo, Payload } from "gameflex-connector";
+import GameAnvilManager from "./GameAnvilManager";
+import { ResultCodeConnect, ResultCodeAuth, LoginedUserInfo, Payload } from "gameanvil-connector";
 import Chat from "./Chat";
 import Game from "./Game";
 
@@ -40,7 +40,7 @@ export default class Connect extends cc.Component {
     game: Game = null;
 
     start() {
-        let connection = GameflexManager.GetInstance().GetConnectionAgent();
+        let connection = GameAnvilManager.GetInstance().GetConnectionAgent();
         connection.AddOnDisconnect((connection, resultCode, reason, force, payload) => {
             this.labelConnect.node.color = cc.Color.RED;
             this.labelAuthenticate.node.color = cc.Color.RED;
@@ -72,7 +72,7 @@ export default class Connect extends cc.Component {
 
     public onConnect() {
         console.log("Connect - clicked");
-        let connection = GameflexManager.GetInstance().GetConnectionAgent();
+        let connection = GameAnvilManager.GetInstance().GetConnectionAgent();
         // 서버 접속
         // Connect(ipAdress: string, callback?: (agent: ConnectionAgent, resultCode: ResultCodeConnect) => void): void;
         //  ipAddress : 접속할 서버 주소. 
@@ -96,7 +96,7 @@ export default class Connect extends cc.Component {
 
     public onAuthenticate() {
         console.log("Authenticate - clicked");
-        let connection = GameflexManager.GetInstance().GetConnectionAgent();
+        let connection = GameAnvilManager.GetInstance().GetConnectionAgent();
         // 인증. 이 예제에서는 Account Id 와 Password가 같을 경우에 인증 성공.
         // Authenticate(deviceId: string, accountId: string, password: string, payload?: Payload, callback?: (agent: ConnectionAgent, resultCode: ResultCodeAuth, loginedUserInfoList: Array<LoginedUserInfo>, message: string, payload: Payload) => void): void;
         //  deviceId : 중복 접속을 체크하기 위해 사용.
@@ -150,7 +150,7 @@ export default class Connect extends cc.Component {
     }
 
     public onDisconnect() {
-        let connection = GameflexManager.GetInstance().GetConnectionAgent();
+        let connection = GameAnvilManager.GetInstance().GetConnectionAgent();
 
         // 접속 종료
         // Disconnect(reason: string, callback?: (agent: ConnectionAgent, resultCode: ResultCodeDisconnect, reason: string) => void, force: boolean, payload: Payload): void;
