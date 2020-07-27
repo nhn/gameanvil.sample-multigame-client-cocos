@@ -15,7 +15,7 @@
   "devDependencies": {},
   "dependencies": {
     "core-js": "^3.6.1",
-    "gameanvil-connector": "git+https://github.nhnent.com/game-server-engine/client-connector-typescript.git#1.0.0-EA2",
+    "gameanvil-connector": "git+https://github.nhnent.com/game-server-engine/client-connector-typescript.git#1.0.0-EA3",
     "regenerator-runtime": "^0.13.3"
   },
   "directories": {
